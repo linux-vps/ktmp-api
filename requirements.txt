@@ -1,4 +1,3 @@
-io
 pytesseract
 Pillow
 requests
