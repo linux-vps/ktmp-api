@@ -28,9 +28,9 @@ class CAPTCHAHandler(http.server.BaseHTTPRequestHandler):
         base64_image = data.get('image')
         if base64_image:
             ocr_text = read_capcha_from_base64(base64_image)
-            response = {'ocr_text': ocr_text}
+            response = ocr_text
         else:
-            response = {'error': 'Base64 image data is missing'}
+            response = "'error': 'Base64 image data is missing'"
         
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
